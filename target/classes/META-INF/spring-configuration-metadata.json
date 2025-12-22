@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "blockchain",
+      "type": "com.clinchain.backend.blockchain.BlockchainProperties",
+      "sourceType": "com.clinchain.backend.blockchain.BlockchainProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "blockchain.chain-id",
+      "type": "java.lang.Long",
+      "sourceType": "com.clinchain.backend.blockchain.BlockchainProperties"
+    },
+    {
+      "name": "blockchain.contract-address",
+      "type": "java.lang.String",
+      "sourceType": "com.clinchain.backend.blockchain.BlockchainProperties"
+    },
+    {
+      "name": "blockchain.gas-limit",
+      "type": "java.math.BigInteger",
+      "sourceType": "com.clinchain.backend.blockchain.BlockchainProperties"
+    },
+    {
+      "name": "blockchain.gas-price",
+      "type": "java.math.BigInteger",
+      "sourceType": "com.clinchain.backend.blockchain.BlockchainProperties"
+    },
+    {
+      "name": "blockchain.private-keys",
+      "type": "java.util.Map<com.clinchain.backend.model.UserRole,java.lang.String>",
+      "sourceType": "com.clinchain.backend.blockchain.BlockchainProperties"
+    },
+    {
+      "name": "blockchain.rpc-url",
+      "type": "java.lang.String",
+      "sourceType": "com.clinchain.backend.blockchain.BlockchainProperties"
+    }
+  ],
+  "hints": []
+}
