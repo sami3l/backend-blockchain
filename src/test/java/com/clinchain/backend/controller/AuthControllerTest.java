@@ -141,9 +141,10 @@ class AuthControllerTest {
     @Test
     void testGetCurrentUser_Unauthorized() throws Exception {
         // Act & Assert - No authentication
+        // Spring Security returns 403 Forbidden by default for unauthenticated requests
         mockMvc.perform(get("/auth/me")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isUnauthorized());
+                        .andExpect(status().isForbidden());
     }
 
     @Test
@@ -158,9 +159,10 @@ class AuthControllerTest {
     @Test
     void testLogout_Unauthorized() throws Exception {
         // Act & Assert - No authentication
+        // Spring Security returns 403 Forbidden by default for unauthenticated requests
         mockMvc.perform(post("/auth/logout")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isUnauthorized());
+                        .andExpect(status().isForbidden());
     }
 
     @Test

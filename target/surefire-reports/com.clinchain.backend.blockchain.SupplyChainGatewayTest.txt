@@ -1,0 +1,75 @@
+-------------------------------------------------------------------------------
+Test set: com.clinchain.backend.blockchain.SupplyChainGatewayTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 9, Skipped: 0, Time elapsed: 0.675 s <<< FAILURE! -- in com.clinchain.backend.blockchain.SupplyChainGatewayTest
+com.clinchain.backend.blockchain.SupplyChainGatewayTest.testAdministerPatient_Success -- Time elapsed: 0.556 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.web3j.protocol.core.RemoteFunctionCall.send()" because the return value of "com.clinchain.backend.blockchain.SupplyChain.administrerPatient(java.math.BigInteger)" is null
+	at com.clinchain.backend.blockchain.SupplyChainGatewayTest.testAdministerPatient_Success(SupplyChainGatewayTest.java:110)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.clinchain.backend.blockchain.SupplyChainGatewayTest.testGetLotFromBlockchain_Success -- Time elapsed: 0.032 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.web3j.protocol.core.RemoteFunctionCall.send()" because the return value of "com.clinchain.backend.blockchain.SupplyChain.lots(java.math.BigInteger)" is null
+	at com.clinchain.backend.blockchain.SupplyChainGatewayTest.testGetLotFromBlockchain_Success(SupplyChainGatewayTest.java:148)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.clinchain.backend.blockchain.SupplyChainGatewayTest.testMettreEnPharmacie_Success -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.web3j.protocol.core.RemoteFunctionCall.send()" because the return value of "com.clinchain.backend.blockchain.SupplyChain.mettreEnPharmacie(java.math.BigInteger)" is null
+	at com.clinchain.backend.blockchain.SupplyChainGatewayTest.testMettreEnPharmacie_Success(SupplyChainGatewayTest.java:95)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.clinchain.backend.blockchain.SupplyChainGatewayTest.testCreerLot_BlockchainError -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.web3j.protocol.core.RemoteFunctionCall.send()" because the return value of "com.clinchain.backend.blockchain.SupplyChain.creerLot(java.math.BigInteger, String)" is null
+	at com.clinchain.backend.blockchain.SupplyChainGatewayTest.testCreerLot_BlockchainError(SupplyChainGatewayTest.java:125)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.clinchain.backend.blockchain.SupplyChainGatewayTest.testGetLotFromBlockchain_StatusMapping -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.web3j.protocol.core.RemoteFunctionCall.send()" because the return value of "com.clinchain.backend.blockchain.SupplyChain.lots(java.math.BigInteger)" is null
+	at com.clinchain.backend.blockchain.SupplyChainGatewayTest.testGetLotFromBlockchain_StatusMapping(SupplyChainGatewayTest.java:174)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.clinchain.backend.blockchain.SupplyChainGatewayTest.testGetLotFromBlockchain_InvalidUUID -- Time elapsed: 0.035 s <<< ERROR!
+org.mockito.exceptions.misusing.UnnecessaryStubbingException: 
+
+Unnecessary stubbings detected.
+Clean & maintainable test code requires zero unnecessary code.
+Following stubbings are unnecessary (click to navigate to relevant line of code):
+  1. -> at com.clinchain.backend.blockchain.SupplyChainGatewayTest.setUp(SupplyChainGatewayTest.java:54)
+  2. -> at com.clinchain.backend.blockchain.SupplyChainGatewayTest.setUp(SupplyChainGatewayTest.java:55)
+  3. -> at com.clinchain.backend.blockchain.SupplyChainGatewayTest.setUp(SupplyChainGatewayTest.java:56)
+  4. -> at com.clinchain.backend.blockchain.SupplyChainGatewayTest.testGetLotFromBlockchain_InvalidUUID(SupplyChainGatewayTest.java:188)
+Please remove unnecessary stubbings or use 'lenient' strictness. More info: javadoc for UnnecessaryStubbingException class.
+	at org.mockito.junit.jupiter.MockitoExtension.afterEach(MockitoExtension.java:192)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.clinchain.backend.blockchain.SupplyChainGatewayTest.testStatusMapping_AllStates -- Time elapsed: 0.010 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.web3j.protocol.core.RemoteFunctionCall.send()" because the return value of "com.clinchain.backend.blockchain.SupplyChain.lots(java.math.BigInteger)" is null
+	at com.clinchain.backend.blockchain.SupplyChainGatewayTest.testStatusMapping_AllStates(SupplyChainGatewayTest.java:212)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.clinchain.backend.blockchain.SupplyChainGatewayTest.testValiderReceptionHopital_Success -- Time elapsed: 0.004 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.web3j.protocol.core.RemoteFunctionCall.send()" because the return value of "com.clinchain.backend.blockchain.SupplyChain.validerReceptionHopital(java.math.BigInteger)" is null
+	at com.clinchain.backend.blockchain.SupplyChainGatewayTest.testValiderReceptionHopital_Success(SupplyChainGatewayTest.java:80)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.clinchain.backend.blockchain.SupplyChainGatewayTest.testCreerLot_Success -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.web3j.protocol.core.RemoteFunctionCall.send()" because the return value of "com.clinchain.backend.blockchain.SupplyChain.creerLot(java.math.BigInteger, String)" is null
+	at com.clinchain.backend.blockchain.SupplyChainGatewayTest.testCreerLot_Success(SupplyChainGatewayTest.java:64)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
