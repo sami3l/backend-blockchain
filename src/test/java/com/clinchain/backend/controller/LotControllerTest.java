@@ -61,7 +61,6 @@ class LotControllerTest {
     }
 
     @Test
-    @WithMockUser(roles = "GROSSISTE")
     void testGetAllLots() throws Exception {
         // Arrange
         List<Lot> lots = Arrays.asList(testLot);
@@ -77,7 +76,6 @@ class LotControllerTest {
     }
 
     @Test
-    @WithMockUser(roles = "GROSSISTE")
     void testGetAllLots_Paginated() throws Exception {
         // Arrange
         Pageable pageable = PageRequest.of(0, 10);
@@ -96,7 +94,6 @@ class LotControllerTest {
     }
 
     @Test
-    @WithMockUser(roles = "GROSSISTE")
     void testGetLotById_Success() throws Exception {
         // Arrange
         when(lotService.getLotById("lot-123")).thenReturn(testLot);
@@ -110,7 +107,6 @@ class LotControllerTest {
     }
 
     @Test
-    @WithMockUser(roles = "GROSSISTE")
     void testGetLotById_NotFound() throws Exception {
         // Arrange
         when(lotService.getLotById("non-existent"))
@@ -123,7 +119,6 @@ class LotControllerTest {
     }
 
     @Test
-    @WithMockUser(roles = "GROSSISTE")
     void testGetStats() throws Exception {
         // Arrange
         LotStatsDto stats = LotStatsDto.builder()
@@ -170,11 +165,15 @@ class LotControllerTest {
                 .andExpect(jsonPath("$.quantity").value(50));
     }
 
-    // Removed testCreateLot_Unauthorized as it tests Spring Security configuration
-    // rather than business logic
-    // The @PreAuthorize("hasRole('GROSSISTE')") annotation on the createLot
-    // endpoint
-    // already ensures only GROSSISTE role can create lots
+    @Test
+    @WithMockUser(roles = "PHARMACIEN")
+    void testCreateLot_Unauthorized() throws Exception {
+        // Act & Assert
+        mockMvc.perform(post("/lots")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(createLotRequest)))
+                .andExpect(status().isForbidden());
+    }
 
     @Test
     @WithMockUser(roles = "HOPITALE")
@@ -282,7 +281,6 @@ class LotControllerTest {
     }
 
     @Test
-    @WithMockUser(roles = "GROSSISTE")
     void testGetBlockchainState() throws Exception {
         // Arrange
         BlockchainLotDto blockchainLot = new BlockchainLotDto();
@@ -301,7 +299,6 @@ class LotControllerTest {
     }
 
     @Test
-    @WithMockUser(roles = "GROSSISTE")
     void testSearchLots() throws Exception {
         // Arrange
         Pageable pageable = PageRequest.of(0, 10);

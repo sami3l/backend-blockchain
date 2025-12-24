@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -19,7 +18,6 @@ class GlobalExceptionHandlerTest {
     private MockMvc mockMvc;
 
     @Test
-    @WithMockUser(roles = "GROSSISTE")
     void testResourceNotFoundException_Returns404() throws Exception {
         // Act & Assert
         mockMvc.perform(get("/lots/non-existent-lot-id")
@@ -32,10 +30,9 @@ class GlobalExceptionHandlerTest {
     @Test
     void testUnauthorizedException_Returns401() throws Exception {
         // Act & Assert - Unauthorized access without token
-        // Spring Security returns 403 Forbidden by default for unauthenticated requests
         mockMvc.perform(get("/auth/me")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isForbidden());
+                .andExpect(status().isUnauthorized());
     }
 
     @Test

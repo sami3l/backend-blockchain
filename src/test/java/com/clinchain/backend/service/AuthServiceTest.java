@@ -84,7 +84,7 @@ class AuthServiceTest {
         // Arrange
         LoginRequest invalidRequest = new LoginRequest("grossiste", "wrongPassword");
         when(userService.findByUsername("grossiste")).thenReturn(testUser);
-        when(passwordEncoder.matches(anyString(), eq("encodedPassword123"))).thenReturn(false);
+        when(passwordEncoder.matches("wrongPassword", "encodedPassword123")).thenReturn(false);
 
         // Act & Assert
         assertThrows(UnauthorizedException.class, () -> {
